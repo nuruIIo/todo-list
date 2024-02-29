@@ -1,0 +1,27 @@
+<div class="container">
+    <h2>Todo List</h2>
+
+    <form id="todoForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" required></textarea>
+        <button type="submit">Add Todo</button>
+    </form>
+
+    <ul id="todoList">
+        {{#each todos}}
+            <li class="todo-item {{#if completed}}completed{{/if}}">
+                <h3>{{title}}</h3>
+                <p>{{description}}</p>
+                <div class="todo-item-actions">
+                    <button class="complete-btn" data-id="{{_id}}">Complete</button>
+                    <button class="delete-btn" data-id="{{_id}}">Delete</button>
+                </div>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+<script src="../js/script.js"></script>
+
